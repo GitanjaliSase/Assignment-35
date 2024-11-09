@@ -10,7 +10,7 @@
         }
   
         .slide {
-          height: 400px;
+          height: 500px;
           width: 600px;
           object-fit: cover;
           border-radius: 10px;
@@ -45,9 +45,41 @@
 </head>
 <body>
     <div class="container">
-        <img src="./images/1.jpg" class="slide" id="slide" />
+        <img src= "./images/2.jpg" class="slide" id="slide" />
         <img src="./images/pre.jpg" class="ico-action ico-prev" onclick="prev()" />
         <img src="./images/next.jpg" class="ico-action ico-next" onclick="next()" />
       </div>
+      <script>
+        const images = [
+        "./images/2.jpg",
+          "./images/1.jpg",
+          "./images/3.jpg",
+          "./images/4.jpg",
+          "./images/5.jpg",
+        ];
+  
+        let index = 0;
+        const slide = document.getElementById("slide");
+  
+        function next() {
+          if (index < images.length - 1) {
+            index++;
+          } else {
+            index = 0;
+          }
+  
+          slide.src = images[index];
+        }
+  
+        function prev() {
+          if (index > 0) {
+            index--;
+          } else {
+            index = images.length - 1;
+          }
+  
+          slide.src = images[index];
+        }
+      </script>
 </body>
 </html>
